@@ -35,9 +35,9 @@ function velociraptor() {
         length: '1.8m',
         period: 'Late Cretaceous',
     };
-    speak: function() {
-        return `RAWERSRARARWERSARARARRRR!`;
-    }
+    // speak: function() {
+    //     return `RAWERSRARARWERSARARARRRR!`;
+    // }
 }
 // Using your dinosaur objects, log answers to these questions:
 
@@ -128,13 +128,14 @@ const zooAnimals = [
 The zoos want to display both the scientific name and the animal name in front of the habitats. Populate the displayNames array with only the animal_name and scientific_name of each animal. displayNames will be an array of strings, and each string should follow this pattern: "Name: Jackal, asiatic, Scientific: Canis aureus."
 
 */
-function getDisplayNames(zooAnimals) {
-    const displayNames = [];
-    zooAnimals.forEach(function(items) {
-        displayNames.push('Name: ${items.animal_name}, Scientific: ${items.scientific_name} ');
-    });
-    return displayNames;
-}
+const displayNames = [];
+
+
+
+zooAnimals.forEach(function(items) {
+    displayNames.push(`Name: ${items.animal_name}, Scientific: ${items.scientific_name} `);
+});
+
 console.log(displayNames);
 
 /* Request 2: .map()
@@ -143,21 +144,20 @@ The zoos need a list of all their animal's names (animal_name only) converted to
 
 */
 
-// const lowCaseAnimalNames = [];
+const lowCaseAnimalNames = [];
 
-// function lowercase(zooAnimals) {
-//     const lowCaseAnimalNames = zooAnimals.map(animal_name) {
-//         return animal_name.toLowerCase();
-//     });
-// return lowCaseAnimalNames;
-// }
-// console.log(lowCaseAnimalNames);
+function lowercase(zooAnimals) {
+    const lowCaseAnimalNames = zooAnimals.map(animal_name) {
+        return animal_name.toLowerCase();
+    });
+//return lowCaseAnimalNames;
+}
+console.log(lowCaseAnimalNames);
 // /* Request 3: .filter() 
 
-The zoos are concerned about animals with a lower population count.Using filter, create a new array of objects called lowPopulationAnimals which contains only the animals with a population less than 5.
+/*The zoos are concerned about animals with a lower population count.Using filter, create a new array of objects called lowPopulationAnimals which contains only the animals with a population less than 5.
 
-    *
-    /
+    
 const lowPopulationAnimals = [];
 console.log(lowPopulationAnimals);
 
